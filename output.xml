@@ -1,311 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.7 on win32)" generated="20240101 23:53:20.959" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.7 on win32)" generated="20240102 15:04:59.394" rpa="false" schemaversion="4">
 <suite id="s1" name="pythonProject" source="C:\Users\karku\PycharmProjects\pythonProject">
 <suite id="s1-s1" name="Test" source="C:\Users\karku\PycharmProjects\pythonProject\test.robot">
-<test id="s1-s1-t1" name="tests with string" line="16">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${my little string}</arg>
-<arg>New simple String123</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20240101 23:53:21.178" level="INFO">${my little string} = New simple String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.176" endtime="20240101 23:53:21.178"/>
+<test id="s1-s1-t1" name="test with lists" line="13">
+<kw name="create list without duplicates">
+<arg>${simple list}</arg>
+<arg>${one more simple list}</arg>
+<kw name="Remove Duplicates" library="Collections">
+<var>${new simple list}</var>
+<arg>${simple list}</arg>
+<doc>Returns a list without duplicates based on the given ``list``.</doc>
+<msg timestamp="20240102 15:04:59.599" level="INFO">1 duplicate removed.</msg>
+<msg timestamp="20240102 15:04:59.599" level="INFO">${new simple list} = ['1', '2', '3']</msg>
+<status status="PASS" starttime="20240102 15:04:59.599" endtime="20240102 15:04:59.599"/>
+</kw>
+<kw name="Combine Lists" library="Collections">
+<var>${new list}</var>
+<arg>${new simple list}</arg>
+<arg>${one more simple list}</arg>
+<doc>Combines the given ``lists`` together and returns the result.</doc>
+<msg timestamp="20240102 15:04:59.600" level="INFO">${new list} = ['1', '2', '3', '2', '4', '6']</msg>
+<status status="PASS" starttime="20240102 15:04:59.600" endtime="20240102 15:04:59.600"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${my little string}</arg>
+<arg>${\n}${new list} this is our new list</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.178" endtime="20240101 23:53:21.179"/>
+<status status="PASS" starttime="20240102 15:04:59.600" endtime="20240102 15:04:59.600"/>
 </kw>
-<kw name="Convert To Lower Case" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<doc>Converts string to lower case.</doc>
-<msg timestamp="20240101 23:53:21.179" level="INFO">${new result} = new simple string123</msg>
-<status status="PASS" starttime="20240101 23:53:21.179" endtime="20240101 23:53:21.179"/>
+<kw name="Get Length" library="BuiltIn">
+<var>${len}</var>
+<arg>${new list}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20240102 15:04:59.600" level="INFO">Length is 6</msg>
+<msg timestamp="20240102 15:04:59.600" level="INFO">${len} = 6</msg>
+<status status="PASS" starttime="20240102 15:04:59.600" endtime="20240102 15:04:59.600"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
+<arg>${\n}'${len}' and this is its length</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.180" endtime="20240101 23:53:21.180"/>
+<status status="PASS" starttime="20240102 15:04:59.600" endtime="20240102 15:04:59.601"/>
 </kw>
-<kw name="Convert To Upper Case" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<doc>Converts string to upper case.</doc>
-<msg timestamp="20240101 23:53:21.181" level="INFO">${new result} = NEW SIMPLE STRING123</msg>
-<status status="PASS" starttime="20240101 23:53:21.180" endtime="20240101 23:53:21.181"/>
+<status status="PASS" starttime="20240102 15:04:59.599" endtime="20240102 15:04:59.601"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.181" endtime="20240101 23:53:21.181"/>
-</kw>
-<kw name="Convert To Title Case" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<doc>Converts string to title case.</doc>
-<msg timestamp="20240101 23:53:21.181" level="INFO">${new result} = New Simple String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.181" endtime="20240101 23:53:21.181"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.181" endtime="20240101 23:53:21.182"/>
-</kw>
-<kw name="Fetch From Left" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>l</arg>
-<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
-<msg timestamp="20240101 23:53:21.184" level="INFO">${new result} = New simp</msg>
-<status status="PASS" starttime="20240101 23:53:21.184" endtime="20240101 23:53:21.184"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.184" endtime="20240101 23:53:21.185"/>
-</kw>
-<kw name="Fetch From Right" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>l</arg>
-<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
-<msg timestamp="20240101 23:53:21.186" level="INFO">${new result} = e String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.185" endtime="20240101 23:53:21.186"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.186" endtime="20240101 23:53:21.186"/>
-</kw>
-<kw name="Encode String To Bytes" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>UTF-8</arg>
-<doc>Encodes the given Unicode ``string`` to bytes using the given ``encoding``.</doc>
-<msg timestamp="20240101 23:53:21.187" level="INFO">${new result} = New simple String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.186" endtime="20240101 23:53:21.187"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.187" endtime="20240101 23:53:21.187"/>
-</kw>
-<kw name="Format String" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>{:*^30}</arg>
-<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
-<msg timestamp="20240101 23:53:21.189" level="INFO">${new result} = New simple String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.189" endtime="20240101 23:53:21.189"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.189" endtime="20240101 23:53:21.190"/>
-</kw>
-<kw name="Generate Random String" library="String">
-<var>${new result}</var>
-<arg>8</arg>
-<arg>rydjBBiYY1</arg>
-<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<msg timestamp="20240101 23:53:21.190" level="INFO">${new result} = yjyrByjd</msg>
-<status status="PASS" starttime="20240101 23:53:21.190" endtime="20240101 23:53:21.190"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.191" endtime="20240101 23:53:21.191"/>
-</kw>
-<kw name="Get Line" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>-1</arg>
-<doc>Returns the specified line from the given ``string``.</doc>
-<msg timestamp="20240101 23:53:21.191" level="INFO">${new result} = New simple String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.191" endtime="20240101 23:53:21.192"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.192" endtime="20240101 23:53:21.192"/>
-</kw>
-<kw name="Get Line Count" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<doc>Returns and logs the number of lines in the given string.</doc>
-<msg timestamp="20240101 23:53:21.193" level="INFO">1 lines</msg>
-<msg timestamp="20240101 23:53:21.193" level="INFO">${new result} = 1</msg>
-<status status="PASS" starttime="20240101 23:53:21.193" endtime="20240101 23:53:21.193"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.193" endtime="20240101 23:53:21.194"/>
-</kw>
-<kw name="Get Lines Containing String" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>si</arg>
-<doc>Returns lines of the given ``string`` that contain the ``pattern``.</doc>
-<msg timestamp="20240101 23:53:21.194" level="INFO">1 out of 1 lines matched</msg>
-<msg timestamp="20240101 23:53:21.194" level="INFO">${new result} = New simple String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.194" endtime="20240101 23:53:21.194"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.194" endtime="20240101 23:53:21.195"/>
-</kw>
-<kw name="Get Lines Matching Pattern" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>si</arg>
-<doc>Returns lines of the given ``string`` that match the ``pattern``.</doc>
-<msg timestamp="20240101 23:53:21.195" level="INFO">0 out of 1 lines matched</msg>
-<msg timestamp="20240101 23:53:21.195" level="INFO">${new result} = </msg>
-<status status="PASS" starttime="20240101 23:53:21.195" endtime="20240101 23:53:21.195"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.197" endtime="20240101 23:53:21.197"/>
-</kw>
-<kw name="Get Lines Matching Regexp" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>si</arg>
-<doc>Returns lines of the given ``string`` that match the regexp ``pattern``.</doc>
-<msg timestamp="20240101 23:53:21.198" level="INFO">0 out of 1 lines matched</msg>
-<msg timestamp="20240101 23:53:21.198" level="INFO">${new result} = </msg>
-<status status="PASS" starttime="20240101 23:53:21.198" endtime="20240101 23:53:21.198"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.199" endtime="20240101 23:53:21.199"/>
-</kw>
-<kw name="Get Regexp Matches" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>si</arg>
-<doc>Returns a list of all non-overlapping matches in the given string.</doc>
-<msg timestamp="20240101 23:53:21.200" level="INFO">${new result} = ['si']</msg>
-<status status="PASS" starttime="20240101 23:53:21.200" endtime="20240101 23:53:21.200"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.201" endtime="20240101 23:53:21.201"/>
-</kw>
-<kw name="Get Substring" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>2</arg>
-<arg>8</arg>
-<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
-<msg timestamp="20240101 23:53:21.201" level="INFO">${new result} = w simp</msg>
-<status status="PASS" starttime="20240101 23:53:21.201" endtime="20240101 23:53:21.201"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.202" endtime="20240101 23:53:21.202"/>
-</kw>
-<kw name="Remove String" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>simple</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<msg timestamp="20240101 23:53:21.204" level="INFO">${new result} = New  String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.204" endtime="20240101 23:53:21.204"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.204" endtime="20240101 23:53:21.205"/>
-</kw>
-<kw name="Remove String Using Regexp" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>s</arg>
-<arg>IGNORECASE</arg>
-<doc>Removes ``patterns`` from the given ``string``.</doc>
-<msg timestamp="20240101 23:53:21.205" level="INFO">${new result} = New imple String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.205" endtime="20240101 23:53:21.205"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.205" endtime="20240101 23:53:21.206"/>
-</kw>
-<kw name="Replace String" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>i</arg>
-<arg>R</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20240101 23:53:21.207" level="INFO">${new result} = New sRmple StrRng123</msg>
-<status status="PASS" starttime="20240101 23:53:21.206" endtime="20240101 23:53:21.207"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.207" endtime="20240101 23:53:21.207"/>
-</kw>
-<kw name="Should Be String" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<doc>Fails if the given ``item`` is not a string.</doc>
-<msg timestamp="20240101 23:53:21.207" level="INFO">${new result} = None</msg>
-<status status="PASS" starttime="20240101 23:53:21.207" endtime="20240101 23:53:21.208"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.208" endtime="20240101 23:53:21.208"/>
-</kw>
-<kw name="Split String From Right" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<arg>r</arg>
-<doc>Splits the ``string`` using ``separator`` starting from right.</doc>
-<msg timestamp="20240101 23:53:21.208" level="INFO">${new result} = ['New simple St', 'ing123']</msg>
-<status status="PASS" starttime="20240101 23:53:21.208" endtime="20240101 23:53:21.208"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.209" endtime="20240101 23:53:21.209"/>
-</kw>
-<kw name="Split String To Characters" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<doc>Splits the given ``string`` to characters.</doc>
-<msg timestamp="20240101 23:53:21.210" level="INFO">${new result} = ['N', 'e', 'w', ' ', 's', 'i', 'm', 'p', 'l', 'e', ' ', 'S', 't', 'r', 'i', 'n', 'g', '1', '2', '3']</msg>
-<status status="PASS" starttime="20240101 23:53:21.210" endtime="20240101 23:53:21.210"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.210" endtime="20240101 23:53:21.210"/>
-</kw>
-<kw name="Strip String" library="String">
-<var>${new result}</var>
-<arg>${my little string}</arg>
-<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
-<msg timestamp="20240101 23:53:21.212" level="INFO">${new result} = New simple String123</msg>
-<status status="PASS" starttime="20240101 23:53:21.212" endtime="20240101 23:53:21.212"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new result}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240101 23:53:21.212" endtime="20240101 23:53:21.213"/>
-</kw>
-<status status="PASS" starttime="20240101 23:53:21.176" endtime="20240101 23:53:21.213"/>
+<status status="PASS" starttime="20240102 15:04:59.598" endtime="20240102 15:04:59.601"/>
 </test>
-<status status="PASS" starttime="20240101 23:53:20.983" endtime="20240101 23:53:21.215"/>
+<status status="PASS" starttime="20240102 15:04:59.415" endtime="20240102 15:04:59.602"/>
 </suite>
-<status status="PASS" starttime="20240101 23:53:20.960" endtime="20240101 23:53:21.217"/>
+<status status="PASS" starttime="20240102 15:04:59.396" endtime="20240102 15:04:59.603"/>
 </suite>
 <statistics>
 <total>

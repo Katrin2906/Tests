@@ -4,15 +4,18 @@ Library    Collections
 Library    BuiltIn
 Library    OperatingSystem
 Library    SeleniumLibrary
+
 *** Variables ***
 @{simple list}    1    1    2    3
 @{one more simple list}    2    4    6
 @{new list}
 ${len}
+
 *** Test Cases ***
 test with lists
    # List Should Not Contain Duplicates    ${simple list}     msg='we have a trouble'
-    create list without duplicates
+    create list without duplicates      ${simple list}    ${one more simple list}
+
 tests with string
      Set Test Variable     ${my little string}     New simple String123
      Log To Console       ${\n}${my little string}
@@ -40,15 +43,15 @@ tests with string
      Log To Console    ${\n}${new result}
      ${new result}    Get Lines Matching Pattern        ${my little string}   si
      Log To Console    ${\n}${new result}
-     ${new result}    Get Lines Matching Regexp           ${my little string}   si
+     ${new result}    Get Lines Matching Regexp           ${my little string}   [a-z]
      Log To Console    ${\n}${new result}
-     ${new result}    Get Regexp Matches              ${my little string}  si
+     ${new result}    Get Regexp Matches              ${my little string}  [a-z]
      Log To Console    ${\n}${new result}
      ${new result}    Get Substring         ${my little string}    2   8
      Log To Console    ${\n}${new result}
      ${new result}    Remove String             ${my little string}   simple
      Log To Console    ${\n}${new result}
-     ${new result}    Remove String Using Regexp              ${my little string}    s    IGNORECASE
+     ${new result}    Remove String Using Regexp              ${my little string}    [a-z]    IGNORECASE
      Log To Console    ${\n}${new result}
      ${new result}    Replace String        ${my little string}    i    R
      Log To Console    ${\n}${new result}
@@ -61,14 +64,11 @@ tests with string
      ${new result}    Strip String           ${my little string}
      Log To Console    ${\n}${new result}
 
-
-
 *** Keywords ***
 create list without duplicates
-    [Documentation]    ${simple list}    ${one more simple list}
-        ${new simple list}=   Remove Duplicates   ${simple list}
-        ${new list}=  Combine Lists    ${new simple list}    ${one more simple list}
-        Log To Console   ${\n}${new list} this is our new list
-        ${len}=   Get Length    ${new list}
-        Log To Console    ${\n}'${len}' and this is its length
-
+    [Arguments]        ${simple list}    ${one more simple list}
+    ${new simple list}   Remove Duplicates   ${simple list}
+    ${new list}  Combine Lists    ${new simple list}    ${one more simple list}
+    Log To Console   ${\n}${new list} this is our new list
+    ${len}   Get Length    ${new list}
+    Log To Console    ${\n}'${len}' and this is its len
