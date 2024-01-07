@@ -1,52 +1,554 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.7 on win32)" generated="20240102 15:04:59.394" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.7 on win32)" generated="20240108 00:08:27.378" rpa="false" schemaversion="4">
 <suite id="s1" name="pythonProject" source="C:\Users\karku\PycharmProjects\pythonProject">
-<suite id="s1-s1" name="Test" source="C:\Users\karku\PycharmProjects\pythonProject\test.robot">
-<test id="s1-s1-t1" name="test with lists" line="13">
-<kw name="create list without duplicates">
-<arg>${simple list}</arg>
-<arg>${one more simple list}</arg>
-<kw name="Remove Duplicates" library="Collections">
-<var>${new simple list}</var>
-<arg>${simple list}</arg>
-<doc>Returns a list without duplicates based on the given ``list``.</doc>
-<msg timestamp="20240102 15:04:59.599" level="INFO">1 duplicate removed.</msg>
-<msg timestamp="20240102 15:04:59.599" level="INFO">${new simple list} = ['1', '2', '3']</msg>
-<status status="PASS" starttime="20240102 15:04:59.599" endtime="20240102 15:04:59.599"/>
+<suite id="s1-s1" name="Strings" source="C:\Users\karku\PycharmProjects\pythonProject\strings.robot">
+<test id="s1-s1-t1" name="string counting" line="12">
+<kw name="Convert To List" library="Collections">
+<var>@{list}</var>
+<arg>${string}</arg>
+<doc>Converts the given ``item`` to a Python ``list`` type.</doc>
+<msg timestamp="20240108 00:08:27.418" level="INFO">@{list} = [ О | п | я |   | т | ь |   | с | ч | и | т | а | е | м |   | с | т | р | о | к | и ]</msg>
+<status status="PASS" starttime="20240108 00:08:27.418" endtime="20240108 00:08:27.418"/>
 </kw>
-<kw name="Combine Lists" library="Collections">
-<var>${new list}</var>
-<arg>${new simple list}</arg>
-<arg>${one more simple list}</arg>
-<doc>Combines the given ``lists`` together and returns the result.</doc>
-<msg timestamp="20240102 15:04:59.600" level="INFO">${new list} = ['1', '2', '3', '2', '4', '6']</msg>
-<status status="PASS" starttime="20240102 15:04:59.600" endtime="20240102 15:04:59.600"/>
-</kw>
+<for flavor="IN ENUMERATE">
+<var>${index}</var>
+<var>${value}</var>
+<value>@{list}</value>
+<iter>
+<var name="${index}">0</var>
+<var name="${value}">О</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
 <kw name="Log To Console" library="BuiltIn">
-<arg>${\n}${new list} this is our new list</arg>
+<arg>${\n}${index} символ - пробел</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240102 15:04:59.600" endtime="20240102 15:04:59.600"/>
+<status status="NOT RUN" starttime="20240108 00:08:27.419" endtime="20240108 00:08:27.419"/>
 </kw>
-<kw name="Get Length" library="BuiltIn">
-<var>${len}</var>
-<arg>${new list}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<msg timestamp="20240102 15:04:59.600" level="INFO">Length is 6</msg>
-<msg timestamp="20240102 15:04:59.600" level="INFO">${len} = 6</msg>
-<status status="PASS" starttime="20240102 15:04:59.600" endtime="20240102 15:04:59.600"/>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.420" endtime="20240108 00:08:27.420"/>
 </kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.419" endtime="20240108 00:08:27.420"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.419" endtime="20240108 00:08:27.420"/>
+</if>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${\n}'${len}' and this is its length</arg>
+<arg>${\n}${index} символ - ${value}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240102 15:04:59.600" endtime="20240102 15:04:59.601"/>
+<status status="PASS" starttime="20240108 00:08:27.420" endtime="20240108 00:08:27.421"/>
 </kw>
-<status status="PASS" starttime="20240102 15:04:59.599" endtime="20240102 15:04:59.601"/>
+<status status="PASS" starttime="20240108 00:08:27.419" endtime="20240108 00:08:27.421"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<var name="${value}">п</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.421" endtime="20240108 00:08:27.421"/>
 </kw>
-<status status="PASS" starttime="20240102 15:04:59.598" endtime="20240102 15:04:59.601"/>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.421" endtime="20240108 00:08:27.421"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.421" endtime="20240108 00:08:27.421"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.421" endtime="20240108 00:08:27.421"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.421" endtime="20240108 00:08:27.423"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.421" endtime="20240108 00:08:27.423"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<var name="${value}">я</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.423" endtime="20240108 00:08:27.423"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.424" endtime="20240108 00:08:27.424"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.423" endtime="20240108 00:08:27.424"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.423" endtime="20240108 00:08:27.424"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.424" endtime="20240108 00:08:27.424"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.423" endtime="20240108 00:08:27.424"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<var name="${value}"> </var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.426" endtime="20240108 00:08:27.426"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20240108 00:08:27.426" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20240108 00:08:27.426" endtime="20240108 00:08:27.426"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.424" endtime="20240108 00:08:27.426"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.424" endtime="20240108 00:08:27.427"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.427" endtime="20240108 00:08:27.427"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.424" endtime="20240108 00:08:27.427"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<var name="${value}">т</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.427" endtime="20240108 00:08:27.427"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.427" endtime="20240108 00:08:27.427"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.427" endtime="20240108 00:08:27.427"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.427" endtime="20240108 00:08:27.427"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.427" endtime="20240108 00:08:27.427"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.427" endtime="20240108 00:08:27.428"/>
+</iter>
+<iter>
+<var name="${index}">5</var>
+<var name="${value}">ь</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.428" endtime="20240108 00:08:27.428"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.428" endtime="20240108 00:08:27.428"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.428" endtime="20240108 00:08:27.428"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.428" endtime="20240108 00:08:27.428"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.428" endtime="20240108 00:08:27.428"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.428" endtime="20240108 00:08:27.429"/>
+</iter>
+<iter>
+<var name="${index}">6</var>
+<var name="${value}"> </var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.429" endtime="20240108 00:08:27.429"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20240108 00:08:27.430" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20240108 00:08:27.430" endtime="20240108 00:08:27.430"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.429" endtime="20240108 00:08:27.430"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.429" endtime="20240108 00:08:27.430"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.430" endtime="20240108 00:08:27.430"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.429" endtime="20240108 00:08:27.430"/>
+</iter>
+<iter>
+<var name="${index}">7</var>
+<var name="${value}">с</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.430" endtime="20240108 00:08:27.430"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.430" endtime="20240108 00:08:27.430"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.430" endtime="20240108 00:08:27.430"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.430" endtime="20240108 00:08:27.430"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.431" endtime="20240108 00:08:27.431"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.430" endtime="20240108 00:08:27.431"/>
+</iter>
+<iter>
+<var name="${index}">8</var>
+<var name="${value}">ч</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.431" endtime="20240108 00:08:27.431"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.431" endtime="20240108 00:08:27.431"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.431" endtime="20240108 00:08:27.431"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.431" endtime="20240108 00:08:27.431"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.432" endtime="20240108 00:08:27.432"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.431" endtime="20240108 00:08:27.432"/>
+</iter>
+<iter>
+<var name="${index}">9</var>
+<var name="${value}">и</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.433" endtime="20240108 00:08:27.433"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.433" endtime="20240108 00:08:27.433"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.432" endtime="20240108 00:08:27.433"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.432" endtime="20240108 00:08:27.433"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.433" endtime="20240108 00:08:27.433"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.432" endtime="20240108 00:08:27.433"/>
+</iter>
+<iter>
+<var name="${index}">10</var>
+<var name="${value}">т</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.433" endtime="20240108 00:08:27.433"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.433" endtime="20240108 00:08:27.433"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.433" endtime="20240108 00:08:27.433"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.433" endtime="20240108 00:08:27.433"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.433" endtime="20240108 00:08:27.434"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.433" endtime="20240108 00:08:27.434"/>
+</iter>
+<iter>
+<var name="${index}">11</var>
+<var name="${value}">а</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.434" endtime="20240108 00:08:27.434"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.434" endtime="20240108 00:08:27.434"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.434" endtime="20240108 00:08:27.434"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.434" endtime="20240108 00:08:27.434"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.434" endtime="20240108 00:08:27.435"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.434" endtime="20240108 00:08:27.436"/>
+</iter>
+<iter>
+<var name="${index}">12</var>
+<var name="${value}">е</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.436" endtime="20240108 00:08:27.436"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.436" endtime="20240108 00:08:27.436"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.436" endtime="20240108 00:08:27.436"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.436" endtime="20240108 00:08:27.436"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.436" endtime="20240108 00:08:27.436"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.436" endtime="20240108 00:08:27.436"/>
+</iter>
+<iter>
+<var name="${index}">13</var>
+<var name="${value}">м</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.437" endtime="20240108 00:08:27.437"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.437" endtime="20240108 00:08:27.437"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.437" endtime="20240108 00:08:27.437"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.437" endtime="20240108 00:08:27.437"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.437" endtime="20240108 00:08:27.438"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.437" endtime="20240108 00:08:27.438"/>
+</iter>
+<iter>
+<var name="${index}">14</var>
+<var name="${value}"> </var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.438" endtime="20240108 00:08:27.439"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20240108 00:08:27.439" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20240108 00:08:27.439" endtime="20240108 00:08:27.439"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.438" endtime="20240108 00:08:27.439"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.438" endtime="20240108 00:08:27.439"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.439" endtime="20240108 00:08:27.439"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.438" endtime="20240108 00:08:27.439"/>
+</iter>
+<iter>
+<var name="${index}">15</var>
+<var name="${value}">с</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.439" endtime="20240108 00:08:27.439"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.439" endtime="20240108 00:08:27.439"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.439" endtime="20240108 00:08:27.439"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.439" endtime="20240108 00:08:27.439"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.439" endtime="20240108 00:08:27.440"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.439" endtime="20240108 00:08:27.440"/>
+</iter>
+<iter>
+<var name="${index}">16</var>
+<var name="${value}">т</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.440" endtime="20240108 00:08:27.440"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.440" endtime="20240108 00:08:27.440"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.440" endtime="20240108 00:08:27.440"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.440" endtime="20240108 00:08:27.440"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.441" endtime="20240108 00:08:27.441"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.440" endtime="20240108 00:08:27.441"/>
+</iter>
+<iter>
+<var name="${index}">17</var>
+<var name="${value}">р</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.442" endtime="20240108 00:08:27.442"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.443" endtime="20240108 00:08:27.443"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.441" endtime="20240108 00:08:27.443"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.441" endtime="20240108 00:08:27.443"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.443" endtime="20240108 00:08:27.443"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.441" endtime="20240108 00:08:27.443"/>
+</iter>
+<iter>
+<var name="${index}">18</var>
+<var name="${value}">о</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.444" endtime="20240108 00:08:27.444"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.444" endtime="20240108 00:08:27.444"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.443" endtime="20240108 00:08:27.444"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.443" endtime="20240108 00:08:27.444"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.444" endtime="20240108 00:08:27.445"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.443" endtime="20240108 00:08:27.445"/>
+</iter>
+<iter>
+<var name="${index}">19</var>
+<var name="${value}">к</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.445" endtime="20240108 00:08:27.445"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.445" endtime="20240108 00:08:27.445"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.445" endtime="20240108 00:08:27.445"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.445" endtime="20240108 00:08:27.445"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.445" endtime="20240108 00:08:27.446"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.445" endtime="20240108 00:08:27.446"/>
+</iter>
+<iter>
+<var name="${index}">20</var>
+<var name="${value}">и</var>
+<if>
+<branch type="IF" condition="&quot;${value}&quot;==&quot;${SPACE}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - пробел</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.446" endtime="20240108 00:08:27.447"/>
+</kw>
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<status status="NOT RUN" starttime="20240108 00:08:27.447" endtime="20240108 00:08:27.447"/>
+</kw>
+<status status="NOT RUN" starttime="20240108 00:08:27.446" endtime="20240108 00:08:27.447"/>
+</branch>
+<status status="PASS" starttime="20240108 00:08:27.446" endtime="20240108 00:08:27.447"/>
+</if>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}${index} символ - ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240108 00:08:27.447" endtime="20240108 00:08:27.447"/>
+</kw>
+<status status="PASS" starttime="20240108 00:08:27.446" endtime="20240108 00:08:27.447"/>
+</iter>
+<status status="PASS" starttime="20240108 00:08:27.419" endtime="20240108 00:08:27.447"/>
+</for>
+<status status="PASS" starttime="20240108 00:08:27.416" endtime="20240108 00:08:27.448"/>
 </test>
-<status status="PASS" starttime="20240102 15:04:59.415" endtime="20240102 15:04:59.602"/>
+<status status="PASS" starttime="20240108 00:08:27.400" endtime="20240108 00:08:27.449"/>
 </suite>
-<status status="PASS" starttime="20240102 15:04:59.396" endtime="20240102 15:04:59.603"/>
+<status status="PASS" starttime="20240108 00:08:27.379" endtime="20240108 00:08:27.452"/>
 </suite>
 <statistics>
 <total>
@@ -56,7 +558,7 @@
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="pythonProject">pythonProject</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">pythonProject.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Strings">pythonProject.Strings</stat>
 </suite>
 </statistics>
 <errors>
