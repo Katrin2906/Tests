@@ -16,23 +16,13 @@ making dictionary
     #Set To Dictionary  ${dictionary_data}  ${key}=${element_list}
     Open Browser    ${url}    ${browser}     options=add_experimental_option("detach", True)
     Maximize Browser Window
-
-    @{letters list}    Create List
-    @{melody list}     Create List
-    FOR    ${i}    IN RANGE    1    33
-        ${letters value}    Get Text     (//tbody/tr/td[contains(text(),"Русский символ")]/following-sibling::td)[${i}]
-        ${melody value}    Get Text    (//tbody/tr/td[contains(text(),"Напевы")]/following-sibling::td)[${i}]
-    Append To List    ${letters list}    ${letters value}
-    Append To List    ${melody list}    ${melody value}
-    END
-    Log Many           ${letters list}
-    Log Many        ${melody list}
-    
     &{new dict}    Create Dictionary
-    ${new dict}    Set To Dictionary    ${new dict}    ${letters list}=${melody list}
-         Log To Console    ${new dict}
-
-    Log Many    ${new dict}
+    FOR    ${i}    IN RANGE    1    33
+        ${letters value}    Get Text     (//tbody[1]/tr/td[1])[${i}]
+        ${melody value}    Get Text    (//tbody[1]/tr/td[4])[${i}]
+        Set To Dictionary    ${new dict}    ${letters value}=${melody value}
+    END
+    Log To Console    ${new dict}
     [Teardown]    Close Browser
 
 *** Keywords ***
